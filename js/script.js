@@ -50,9 +50,9 @@ function pad(n) {
  * @returns {string}
  */
 function readingTime(words) {
-  if (words === 0) return "< 1 minute";
+  if (words === 0) return "<1 minute";
   const mins = Math.ceil(words / 200);
-  return mins < 1 ? "< 1 minute" : mins === 1 ? "1 minute" : `${mins} minutes`;
+  return mins === 1 ? "1 minute" : `${mins} minutes`;
 }
 
 /**
@@ -214,7 +214,7 @@ function applyTheme(theme) {
   themeIcon.src = isDark ? MOON_ICON : SUN_ICON;
   themeToggle.setAttribute(
     "aria-label",
-    isDark ? "Switch to light mjode" : "Switch to dark mode"
+    isDark ? "Switch to light mode" : "Switch to dark mode"
   );
   localStorage.setItem("cc-theme", theme);
 }

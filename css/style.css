@@ -202,15 +202,19 @@ ul {
   border-color: #fa9a82 !important;
 }
 
-/* Limit warning */
+/* Limit warning — hidden by default via [hidden]; only shown by JS */
 .limit-warning {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 6px;
   margin-top: 8px;
   color: #fa9a82;
   font-size: 0.8125rem;
   font-weight: 500;
+}
+
+.limit-warning:not([hidden]) {
+  display: flex;
 }
 
 .limit-warning img {
