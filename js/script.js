@@ -23,8 +23,8 @@ const densityList   = document.getElementById("density-list");
 const densityEmpty  = document.getElementById("density-empty");
 const seeMoreBtn    = document.getElementById("see-more-btn");
 
-const DARK_LOGO  = "assets/logos/dark-logo.png";
-const LIGHT_LOGO = "assets/logos/white-logo.png";
+const DARK_LOGO  = "assets/logos/white-logo.png";
+const LIGHT_LOGO = "assets/logos/dark-logo.png";
 const MOON_ICON  = "assets/icons/moon-02.svg";
 const SUN_ICON   = "assets/icons/settings Icon.svg";
 
@@ -190,7 +190,7 @@ function analyze() {
       if (chars > limit) {
         textInput.classList.add("over-limit");
         limitWarning.hidden = false;
-        limitWarnText.textContent = `Character limit exceeded! (${chars}/${limit})`;
+        limitWarnText.textContent = `Limit reached! Your text exceeds ${limit} characters.`;
       } else {
         textInput.classList.remove("over-limit");
         limitWarning.hidden = true;
@@ -211,7 +211,7 @@ function applyTheme(theme) {
   html.dataset.theme = theme;
   const isDark = theme === "dark";
   logo.src = isDark ? DARK_LOGO : LIGHT_LOGO;
-  themeIcon.src = isDark ? MOON_ICON : SUN_ICON;
+  themeIcon.src = isDark ? SUN_ICON : MOON_ICON;
   themeToggle.setAttribute(
     "aria-label",
     isDark ? "Switch to light mode" : "Switch to dark mode"
@@ -237,6 +237,8 @@ function toggleTheme() {
 
 // Theme toggle
 themeToggle.addEventListener("click", toggleTheme);
+
+
 
 // Text input
 textInput.addEventListener("input", analyze);

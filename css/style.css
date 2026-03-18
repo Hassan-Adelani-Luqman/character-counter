@@ -23,9 +23,9 @@
   --logo-src: url("../assets/logos/dark-logo.png");
 
   /* Card backgrounds */
-  --card-purple-bg: #d3a0fa;
-  --card-amber-bg: #ffb844;
-  --card-coral-bg: #fa9a82;
+  --card-purple-bg: #D3A0FA;
+  --card-amber-bg: #FF9F00;
+  --card-coral-bg: #FE8159;
 }
 
 /* ==========================================
@@ -137,6 +137,11 @@ ul {
   transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
+.theme-toggle img {
+  width: 22px;
+  height: 22px;
+}
+
 .theme-toggle:hover {
   filter: brightness(1.15);
 }
@@ -206,10 +211,10 @@ ul {
 .limit-warning {
   display: none;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   margin-top: 8px;
   color: #fa9a82;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
@@ -219,6 +224,8 @@ ul {
 
 .limit-warning img {
   flex-shrink: 0;
+  width: 14px;
+  height: 14px;
   /* Tint to coral in both themes */
   filter: none;
 }
@@ -398,9 +405,9 @@ ul {
 /* Decorative shape in card */
 .card__shape {
   position: absolute;
-  right: -18px;
-  bottom: -18px;
-  width: 130px;
+  right: 20px;
+  top: 0px;
+  width: 100px;
   height: 130px;
   object-fit: contain;
   opacity: 0.4;
@@ -480,7 +487,7 @@ ul {
 
 /* See more button */
 .see-more-btn {
-  display: inline-flex;
+  display: none;
   align-items: center;
   gap: 5px;
   font-size: 0.9375rem;
@@ -489,6 +496,10 @@ ul {
   padding: 4px 0;
   margin-top: 4px;
   transition: color 0.2s ease;
+}
+
+.see-more-btn:not([hidden]) {
+  display: inline-flex;
 }
 
 .see-more-btn:hover {
